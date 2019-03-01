@@ -21,6 +21,7 @@ class MainActivity : AppCompatActivity() {
 
         for (i in 0..100) {
             users.add(User("Daniel", "Malone", "dm@gmail.com"))
+            println(users[i].firstName)
         }
 
         recycler_view_id.apply {

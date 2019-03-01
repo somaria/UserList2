@@ -1,6 +1,7 @@
 package com.example.userlist2
 
-data class User(
-    val firstName: String = "Test",
-    val lastName: String = "",
-    val email: String = "")
+class User (
+    var firstName: String?,
+    var lastName: String?,
+    var email: String?
+)

@@ -26,8 +26,10 @@ class UsersAdapter(private val users: MutableList<User>) : RecyclerView.Adapter<
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
-        holder.firstName.text = users[position].firstName
+        val user = users[position]
 
+        holder.firstName.text = user.firstName
+        holder.lastName.text = user.lastName
 
     }
 
@@ -35,6 +37,7 @@ class UsersAdapter(private val users: MutableList<User>) : RecyclerView.Adapter<
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         val firstName: TextView = itemView.firstName
+        val lastName: TextView = itemView.lastName
 
     }
 
