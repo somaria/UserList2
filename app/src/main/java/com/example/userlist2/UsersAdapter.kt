@@ -1,6 +1,7 @@
 package com.example.userlist2
 
 import android.support.v7.widget.RecyclerView
+import android.util.Log.d
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,7 +9,7 @@ import android.widget.TextView
 import com.example.userlist2.UsersAdapter.ViewHolder
 import kotlinx.android.synthetic.main.user_row.view.*
 
-class UsersAdapter(private val users: MutableList<User>) : RecyclerView.Adapter<ViewHolder>() {
+class UsersAdapter(private val users: List<User>) : RecyclerView.Adapter<ViewHolder>() {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -28,7 +29,9 @@ class UsersAdapter(private val users: MutableList<User>) : RecyclerView.Adapter<
 
         val user = users[position]
 
-        holder.firstName.text = user.firstName
+        d("daniel", "phone number ${user.phone}")
+
+        holder.firstName.text = user.phone
         holder.lastName.text = user.lastName
 
     }

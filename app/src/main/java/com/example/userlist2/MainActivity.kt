@@ -27,35 +27,34 @@ class MainActivity : AppCompatActivity() {
 
         val api = retrofit.create(ApiService::class.java)
 
-        api.fetchAllUsers().enqueue(object: Callback<List<User>> {
+        api.fetchAllUsers().enqueue(object : Callback<List<User>> {
 
             override fun onFailure(call: Call<List<User>>, t: Throwable) {
 
                 d("daniel", "onFailure")
 
-                }
+            }
 
             override fun onResponse(call: Call<List<User>>, response: Response<List<User>>) {
 
-                    d("daniel", "onResponse")
-                    println("response 373: ${response.body()!![0].phone}")
+                showData(response.body())
 
-                }
+            }
 
         })
 
-        val users = mutableListOf<User>()
-        for (i in 0..100) {
-            users.add(User("Daniel", "Malone", "dm@gmail.com", "412-4743-74747"))
-            println(users[i].firstName)
-        }
+    }
+
+    private fun showData(users: List<User>?) {
 
         recycler_view_id.apply {
 
             layoutManager = LinearLayoutManager(this@MainActivity)
-            adapter = UsersAdapter(users)
+            adapter = UsersAdapter(users!!)
 
         }
 
     }
+
+
 }

@@ -20,7 +20,7 @@
             android:id="@+id/firstName"
             android:layout_width="112dp"
             android:layout_height="69dp"
-            android:textSize="32sp"
+            android:textSize="18sp"
             android:padding="8dp"
             tools:text="Daniel"
             android:textColor="@color/colorPrimaryDark"
